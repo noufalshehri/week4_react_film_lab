@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import './App.css';
+import FilmListing from "./components/FilmListing";
+import FilmDetails from "./components/FilmDetails";
+import TMDB from './TMDB.js'
+
 import './App.css';
 
 function App() {
+
+  const filmObject = TMDB.films;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="film-library">
+      <div className="container">
+        <FilmListing filmObject={filmObject} /></div>
+      <FilmDetails data="TMDB.films" />
     </div>
   );
 }
+
 
 export default App;
